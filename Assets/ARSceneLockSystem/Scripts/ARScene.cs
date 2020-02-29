@@ -17,8 +17,8 @@ namespace IsmaelNascimentoAssets.ARSceneLockSystem
         private void OnEnable()
         {
             parentOriginal = transform.parent;
-            positionOriginal = transform.position;
-            rotationOriginal = transform.rotation;
+            positionOriginal = transform.localPosition;
+            rotationOriginal = transform.localRotation;
         }
 
         #endregion
@@ -28,8 +28,8 @@ namespace IsmaelNascimentoAssets.ARSceneLockSystem
         public void SetStateOriginal()
         {
             transform.parent = parentOriginal;
-            transform.position = positionOriginal;
-            transform.rotation = rotationOriginal;
+            transform.localPosition = positionOriginal;
+            transform.localRotation = rotationOriginal;
         }
 
         public void SetLock(Transform newParent) { transform.parent = newParent; }
