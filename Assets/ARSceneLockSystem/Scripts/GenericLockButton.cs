@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace IsmaelNascimentoAssets
+namespace IsmaelNascimentoAssets.ARSceneLockSystem
 {
     [RequireComponent(typeof(Button), typeof(Image))]
     public class GenericLockButton : MonoBehaviour
     {
-        public enum ChangeType
-        {
-            Color,
-            Image,
-            ColorImage
-        }
+        public enum ChangeType { Color, Image, ColorImage }
+
         #region VARIABLES
 
         [SerializeField] private ChangeType changeType = ChangeType.Color;
@@ -45,18 +41,14 @@ namespace IsmaelNascimentoAssets
 
         private void ChangeColorButton(bool isARSceneLock)
         {
-            if (isARSceneLock)
-                GetComponent<Image>().color = lockColor;
-            else
-                GetComponent<Image>().color = unlockColor;
+            if (isARSceneLock) GetComponent<Image>().color = lockColor;
+            else GetComponent<Image>().color = unlockColor;
         }
 
         private void ChangeImageButton(bool isARSceneLock)
         {
-            if (isARSceneLock)
-                GetComponent<Image>().sprite = lockImage;
-            else
-                GetComponent<Image>().sprite = unlockImage;
+            if (isARSceneLock) GetComponent<Image>().sprite = lockImage;
+            else GetComponent<Image>().sprite = unlockImage;
         }
 
         private void ChangeColorImageButton(bool isARSceneLock)
